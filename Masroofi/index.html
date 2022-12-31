@@ -13,6 +13,8 @@
   <!-- Favicons -->
   <link href="assets/img/masroofinobackground.svg" rel="icon">
 
+  <!-- alerts -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   <link rel="shortcut icon" type="image/png" href="images/masroofinobackground.svg" />
 
@@ -60,11 +62,7 @@
   
         <nav id="navbar" class="navbar">
           <ul>
-            <li><a class="nav-link scrollto active" href="#hero">الرئيسية</a></li>
-            <li><a class="nav-link scrollto" href="#services">خدماتنا</a></li>
-            <li><a class="nav-link scrollto ar" href="#about">من نحن</a></li>
-            <li><a class="nav-link scrollto" href="#star">مايميزنا</a></li>
-            <li><a class="nav-link scrollto" href="#contact">انضم لنا</a></li>     
+            <li><a class="nav-link" href="#hero">الرئيسية</a></li>   
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
           
@@ -135,7 +133,7 @@
                   <br>
                   <img src="assets/img/client1.svg" class="img-fluid" alt="">
                   <h3>للمدارس</h3>
-                  <p>مع مصروفي تخلص من مشاكل النقد الورقي ورحب بطريقة عصرية تنظم إدارة، ومتابعة مخزون مقصفك المدرسي بطريقة احترافية. مصروفي يتيح البيع من خلال التعرف على الوجه، أو بصمة الأصبع مما يساهم بتنظيم مقصفك المدرسي.</p>
+                  <p>مع مصروفي تخلص من مشاكل النقد الورقي ورحب بطريقة عصرية تنظم إدارة ومتابعة مخزون مقصفك المدرسي بطريقة احترافية، بالإضافة إلى اتاحة خاصية متابعة الوضع المالي للمدرسة من خلال لوحة تحكم. </p>
                 </div>
               </div>
     
@@ -219,6 +217,7 @@
             <header class="section-header">
               <h2></h2>
               <p>انضم لنا</p>
+              <br>
             </header>
     
             <div class="row d-flex row d-flex justify-content-center gy-4">
@@ -227,19 +226,19 @@
               <div class="col-lg-6">
                
              
-                <form action="forms/contact.php" method="post" class="php-email-form">
-                  <div class="row gy-4">
+                <form onsubmit="myFunction()">
+                  <div class="php-email-form row gy-4">
                     <div class="col-md-12">
-                      <input type="radio" name="gender" value="other"> اب
+                      <input type="radio" name="gender" value="other" checked> اب
                       <input type="radio" name="gender" value="other"> مدرسة
                     </div>
 
                     <div class="col-md-6">
-                      <input type="text" name="name" class="form-control" placeholder="الإيميل" required="">
+                      <input type="text" name="name" class="form-control" placeholder="الاسم" required="">
                     </div>
     
                     <div class="col-md-6 ">
-                      <input type="email" class="form-control" name="email" placeholder="الاسم" required="">
+                      <input type="email" class="form-control" name="email" placeholder="الإيميل" required="">
                     </div>
     
                     <div class="col-md-12">
@@ -251,7 +250,7 @@
                     </div>
     
                     <div class="col-md-12 text-center">
-                      <button type="submit">ارسال</button>
+                      <button type="submit" id="click">ارسال</button>
                     </div>
     
                   </div>
@@ -288,6 +287,14 @@
 
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script>
+    function myFunction(){
+      event.preventDefault()
+      swal("تم الارسال", "شكراً لك", "success").then(function() {
+        location.reload();});
+    }
+  </script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
