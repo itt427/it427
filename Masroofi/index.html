@@ -235,27 +235,27 @@
               <div class="col-lg-6">
                
              
-                <form onsubmit="myFunction()">
+                <form action="https://formsubmit.co/lena.alsuwailem442@gmail.com" method="POST">
                   <div class="php-email-form row gy-4">
                     <div class="col-md-12">
-                      <input type="radio" name="gender" value="other" checked> اب
-                      <input type="radio" name="gender" value="other"> مدرسة
+                      <input type="radio" name="radio" value="اب" id="radio" checked> اب
+                      <input type="radio" name="radio" value="مدرسة" id="radio"> مدرسة
                     </div>
 
                     <div class="col-md-6">
-                      <input type="text" name="name" class="form-control" placeholder="الاسم" required="">
+                      <input type="text" name="name" class="form-control" id="name" placeholder="الاسم" required="">
                     </div>
     
                     <div class="col-md-6 ">
-                      <input type="email" class="form-control" name="email" placeholder="الإيميل" required="">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="الإيميل" required="">
                     </div>
     
                     <div class="col-md-12">
-                      <input type="text" class="form-control" name="subject" placeholder="الموضوع" required="">
+                      <input type="text" class="form-control" name="_subject" id="subject" placeholder="الموضوع" required="">
                     </div>
     
                     <div class="col-md-12">
-                      <textarea class="form-control" name="message" rows="6" placeholder="الاقتراح" required=""></textarea>
+                      <textarea class="form-control" name="message" rows="6" id="message" placeholder="الاقتراح" required=""></textarea>
                     </div>
     
                     <div class="col-md-12 text-center">
@@ -304,6 +304,23 @@
         location.reload();});
     }
   </script>
+
+<!--   <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    function sendEmail(){
+      Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "masroofi.sa@gmail.com",
+        Password : "50CE937D446945D60EBD3670442D5376B83D",
+        To : 'lena.alsuwailem442@gmail.com',
+        From : 'masroofi.sa@gmail.com',
+        Subject : document.getElementById("subject").value + " - " + document.getElementById("radio").value,
+        Body : document.getElementById("message").value
+      }).then(
+        message => alert(message)
+      );
+    }
+  </script> -->
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
