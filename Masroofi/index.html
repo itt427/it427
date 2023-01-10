@@ -71,7 +71,6 @@
   
         <nav id="navbar" class="navbar">
           <ul>
-            <li><a class="nav-link" href="#hero">الرئيسية</a></li>   
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
           
@@ -235,7 +234,7 @@
               <div class="col-lg-6">
                
              
-                <form action="https://formsubmit.co/lena.alsuwailem442@gmail.com" method="POST">
+                <form method="POST" onsubmit="sendEmail(); reset(); return false;">
                   <div class="php-email-form row gy-4">
                     <div class="col-md-12">
                       <input type="radio" name="radio" value="اب" id="radio" checked> اب
@@ -251,7 +250,7 @@
                     </div>
     
                     <div class="col-md-12">
-                      <input type="text" class="form-control" name="_subject" id="subject" placeholder="الموضوع" required="">
+                      <input type="text" class="form-control" name="subject" id="subject" placeholder="الموضوع" required="">
                     </div>
     
                     <div class="col-md-12">
@@ -297,30 +296,46 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <script>
-    function myFunction(){
-      event.preventDefault()
-      swal("تم الارسال", "شكراً لك", "success").then(function() {
-        location.reload();});
-    }
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init("-Y87_3p52mlBT3eHu");
+    })();
   </script>
 
-<!--   <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script>
     function sendEmail(){
-      Email.send({
-        Host : "smtp.elasticemail.com",
-        Username : "masroofi.sa@gmail.com",
-        Password : "50CE937D446945D60EBD3670442D5376B83D",
-        To : 'lena.alsuwailem442@gmail.com',
-        From : 'masroofi.sa@gmail.com',
-        Subject : document.getElementById("subject").value + " - " + document.getElementById("radio").value,
-        Body : document.getElementById("message").value
-      }).then(
-        message => alert(message)
-      );
+
+      var ele = document.getElementsByName('radio');
+      var r = '';
+        for(i = 0; i < ele.length; i++) {
+          if(ele[i].checked)
+            r = ele[i].value;
+        }
+
+      var params = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+        subject: document.getElementById("subject").value,
+        radio: r,
+      };
+
+      const serviceID = "service_7wbaeys";
+      const templateID = "template_823afed";
+
+      emailjs.send(serviceID, templateID, params)
+      .then(res=>{
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
+        document.getElementById("subject").value = "";
+        console.log(res);
+        swal("تم الارسال", "شكراً لك", "success")
+      })
+      .catch(err=>console.log(err));
     }
-  </script> -->
+  </script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
