@@ -1,0 +1,71 @@
+/* app.css */
+
+/* Make the app responsive with Bootstrap */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+/* Center the textarea */
+#text-container {
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#text {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #dac67e; /* Single border */
+  padding: 15px;
+  outline: none;
+  background-color: #ffffff;
+  font-size: 2rem; /* Increased text size */
+  line-height: 1; /* Better readability */
+  color: #585858;
+}
+
+/* Add three blue dots on the bottom-right side of the border */
+.blue-dots {
+  position: absolute;
+  bottom: -25px; /* Adjusted to fit the larger dots */
+  right: 0px;
+  display: flex;
+  gap: 10px; /* Increased spacing for larger dots */
+}
+
+.blue-dots span {
+  width: 25px; /* Increased width */
+  height: 25px; /* Increased height */
+  background-color: #98b1e3;
+  border-radius: 50%; /* Keeps the dots circular */
+}
+
+/* Text on the top left side */
+.learn-text {
+  position: absolute;
+  bottom: -25px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #585858;
+}
+
+/* Style for the button */
+#speakBtn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #ffffff;
+  cursor: pointer;
+}
